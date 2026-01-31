@@ -8,3 +8,4 @@ Certains outils comme XLaunch peuvent être nécessaires sur Windows.
 Le fichier uci sert à faire jouer l'IA automatiquement contre d'autre sur le logiciel Arena.
  - x86_64-w64-mingw32-g++ -O3 uci.cpp board.cpp brain.cpp -o mon_moteur_uci.exe -static
 
+Cette IA à battue le bot Chess.com à 2000 elo en profondeur initiale de 6.
