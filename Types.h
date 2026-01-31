@@ -19,7 +19,8 @@ enum class Color{
 enum class GameStatus {
     EN_COURS,
     ECHEC_ET_MAT,
-    PAT
+    PAT,
+    ECHEC
 };
 
 struct Piece
@@ -40,19 +41,21 @@ struct GameHistory {
     int enPassantCol;
     
     bool wK, wQ, bK, bQ;
+    unsigned long long hash;
+    int halfMoveClock;
 };
 
 enum class TTFlag {
     EXACT,
-    LOWERBOUND, // Alpha
-    UPPERBOUND  // Beta
+    LOWERBOUND,
+    UPPERBOUND 
 };
 
 struct TTEntry {
+    unsigned long long key;
     int depth;
     int value;
     TTFlag flag;
 };
 
-// Valeurs infinies pour l'algo
 const int INF = 1000000;
